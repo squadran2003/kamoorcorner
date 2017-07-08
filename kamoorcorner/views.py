@@ -2,7 +2,7 @@ from django.shortcuts import render
 from products.models import Product
 from orders.forms import OrderDetailForm
 from orders.models import Order
-from cart.cart import *
+from cart.cart import Cart
 
 def home(request):
     products = Product.objects.all()
