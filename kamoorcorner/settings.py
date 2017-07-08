@@ -20,7 +20,7 @@ def get_env_variable(var_name):
         if DEBUG:
             warnings.warn(error_msg)
         else:
-            rasie ImproperlyConfigured(error_msg)
+            raise ImproperlyConfigured(error_msg)
 
 
 
