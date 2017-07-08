@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath kamoorcorner kamoorcorner.deploy_settings --log-file -
+web: gunicorn --pythonpath kamoorcorner kamoorcorner.deploy --log-file -
