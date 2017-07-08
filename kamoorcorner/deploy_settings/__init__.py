@@ -1,5 +1,5 @@
 import dj_database_url
-from kamurcorner.settings import *
+from kamoorcorner.settings import *
 
 DEBUG=False
 TEMPLATE_DEBUG=DEBUG
