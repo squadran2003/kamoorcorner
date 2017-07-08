@@ -8,7 +8,7 @@ from django.template import Context
 
 # Create your views here.
 from products.models import Product
-from cart.cart import Cart
+from cart.cart import *
 from .models import Order
 from .forms import OrderForm,OrderDetailForm,ConfirmOrderForm
 
