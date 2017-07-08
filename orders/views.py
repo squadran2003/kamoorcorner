@@ -45,7 +45,7 @@ def new_order(request):
 
         # send email
         subject = 'Your order from kamoor korner'
-        sender = "noreply@kamoorkorner.com"
+        sender = "dialynn@kamoorkorner.com"
         receiver = [request.user.email,]
         context = {'cart':cart,'total_cost':shopping_cost,
                     'username':request.user.username,
