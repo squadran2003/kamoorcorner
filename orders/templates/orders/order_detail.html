@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}|Order No {{order.id}} {% endblock %}
+{% block body %}
+<h1 class="display-1 text-right"><a class="shopping-cart-header" href="{% url 'home'%}">KAMOOR KORNER</a></h1>
+<div class="cards">
+<a class="display-3 subheader" href="{% url 'orders:all_orders' %}">Back to Orders</a>
+<h4>Ordered by: {{order.user}}</h4>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Product</th>
+      <th>Quantity</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for detail in order.orderdetail_set.all %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{detail.product}}</td>
+      <td>{{detail.quantity}} Kilo</td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<section>
+    <p class="lead">Total price: &#8377;{{order.total_cost}}</p>
+</section>
+<section>
+{% for confirmation in order.confirmedorder_set.all %}
+<p class="lead">Delivery address below: {{confirmation.address|linebreaks}}</p>
+<p class="lead">Contact no: {{confirmation.phone_number}}</p>
+{% endfor %}
+</section>
+</div>
+
+{% endblock%}

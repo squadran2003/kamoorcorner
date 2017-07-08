@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Thank you for placing an order with kamoor korner</title>
+    <style>
+            .button {
+            background-color: #A0522D; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <p>Hi {{username}}</p>
+    <p>Your order details are below</p>
+    {% for order in cart %}
+        <p>{{order.product.title }}  {{ order.quantity }} Kilo &#8377;{{ order.total_price }}</p>
+    {% endfor %}
+    <p>Total cost: &#8377;{{total_cost}} </p>
+    <a class="button" href={{link}}>Click here to confirm your order</a>
+    <p> best wishes </p>
+    <p> Kamoor korner </p>
+</body>
+</html>

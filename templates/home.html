@@ -1,0 +1,119 @@
+{% extends 'layout.html' %}
+{% load static from staticfiles%}
+{% load bootstrap %}
+{% block title %} |Best home made sausages in guwahati {% endblock %}
+{% block section1%}
+<div class="container-fluid">
+    <h1 class="display-1 text-right">KAMOOR KORNER</h1>
+    {% if request.user.is_authenticated %}
+        <nav class="navbar navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav navbar-right">
+                      {% if request.user.is_superuser%}
+                          <li><a href="/admin"><span class="glyphicon glyphicon-log-in"></span> Admin </a></li>
+                          {% if orders %}
+                            <li><a href="{% url 'orders:all_orders'%}"><span class="glyphicon glyphicon-log-in"></span> Orders</a></li>
+                          {% endif %}
+                      {% endif %}
+                    <li><a href="{% url 'accounts:logout'%}"><span class="glyphicon glyphicon-user"></span> logout</a></li>
+
+                 </ul>
+                </div>
+              </div>
+        </nav>
+        <div id="shopping-basket">
+                <p><span class="glyphicon glyphicon-shopping-cart icon"></span>
+                    <a class="btn btn-lg btn-default" href="{% url 'orders:view_cart' %}">
+                        Your Cart</a></p>
+        </div>
+    {% endif %}
+    <div class="jumbotron  text-left">
+        <div class="header-text">
+            <p class="lead">Welcome to Kamoor Corner, a family-run sausage business.
+            All our sausages are made at home from scratch. We believe and promote
+            preservative-free products that are made to order.
+            We offer 3 types of sausages - chicken, pork and breakfast sausages.</p>
+        </div>
+            <a href="#map" class="btn btn-lg btn-default">Find us on a map</a>
+            <a href="#contact-us" class="btn btn-lg btn-default">Contact us</a>
+
+    </div>
+</div>
+
+
+{% endblock %}
+{% block body %}
+<h1 class="display-3 text-center subheader">What we offer</h1>
+<div class="row">
+        {% for product in products %}
+        <div class={{col_class}}>
+            <div class="cards">
+                  <h2>{{product.title}}</h2>
+                  <p>{{product.description}}</p>
+                  <p class="lead">Pick them up from &#8377;{{product.Cost}} per kilo</p>
+                  {% if request.user.is_authenticated %}
+                  <p class="place-order"><input class="btn btn-default btn-sm" type="submit" value="order" /></p>
+                  {% endif%}
+
+             </div>
+             <div class='form-errors'>
+                 <p>errors</p>
+             </div>
+             <div class='order-form' id="{{product.id}}">
+                 <form action="{% url 'orders:add_to_cart' product_id=product.id %}" method="post">
+                     {% csrf_token %}
+                      <p>how many kilo's would you like?</p>
+                     {{ form|bootstrap }}
+                     <input class="btn btn-default btn-sm" type="submit" value="add to cart" />
+                 </form>
+            </div>
+
+        </div>
+        {% endfor %}
+
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <h1 class="display-3">Delivery</h1>
+        </br>
+        <p>All our sausages are made from fresh. Delivery time is set from the time we receive your order, We estimate, your order
+            will be available within the next 24 hrs, you can pick it up or alternatively we can have it delivered to your address.</p>
+        {% if not request.user.is_authenticated %}
+         <h1 class="display-3">Ordering online</h1>
+         <p>First-time buyers will need to register on the website, so that we can keep track of your orders.
+             You need to be logged in to place an order on the website!. Once an order is placed
+             we will send you a confirmation email, you will need to confirm your order by clicking on the link in you email.</p>
+         <p><a class="btn btn-default btn-sm" href="{% url 'accounts:login' %}" >Click here to login</a></p>
+         <p>Dont have an account?</p>
+         <p> <a class="btn btn-default btn-sm" href="{% url 'kkaccounts:signup' %}" >click here to create an account</a></p>
+
+        {% endif %}
+    </div>
+    <div class="col-sm-6" id="contact-us">
+        <h1 class="display-3">Contact us</h1>
+        <p class="lead"> <span class="glyphicon glyphicon-envelope icon"></span>
+            <a href="mailto:kamoorkorner@gmail.com?subject=sausageorder"> order by email</a></p>
+        <p class="lead"> <span class="glyphicon glyphicon-phone-alt icon"></span>
+            <a href='tel:+919980474247'>+91 9980474247</a></p>
+        <p class="lead"> <img class="facebook" src="{% static 'img/facebook.png'%}">
+            <a href='https://www.facebook.com/KamoorKorner/'target="_blank">Follow us on facebook</a></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="display-3  text-center">Our location</h1>
+        <div id="map" style="height:500px; margin:30px 0px 30px 0px; min-width:100%;">
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}

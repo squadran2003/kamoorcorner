@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}Shopping cart {% endblock %}
+{% block body %}
+<h1 class="display-1 text-right"><a class="shopping-cart-header" href="{% url 'home'%}">KAMOOR KORNER</a></h1>
+<h3 class="display-4 text-center">Your Items</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+     <th>#</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Total Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+     {% for item in cart %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{ item.product.title }}</td>
+          <td>{{ item.quantity }} Kilo</td>
+          <td>&#8377;{{ item.total_price }}</td>
+          <td><a class="btn btn-default btn-sm"
+              href="{% url 'orders:remove_from_cart' product_id=item.product.id %}">remove item</a></td>
+        </tr>
+    {% endfor %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total &#8377;{{total_cost}}</td>
+            <form action="{% url 'orders:new_order'%}">
+                {% csrf_token %}
+                <td><input type='submit' value='Order' class="btn btn-success" href="{% url 'orders:new_order' %}"></td>
+            </form>
+        </tr>
+ </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>A new order has been placed at kamoorkorner</title>
+    <style>
+            body {
+            background-color: #A0522D; /* Green */
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+    <p>Hi Dialynn</p>
+    <p>A new order has been placed by {{username}}, details below</p>
+    <p>Order no : {{order.pk}} </p>
+    {% for item in order.orderdetail_set.all %}
+        <p>{{item.product }}  {{ item.quantity }} Kilo</p>
+    {% endfor %}
+    <p>Total cost: &#8377;{{order.total_cost}} </p>
+    <p> best wishes </p>
+    <p> Kamoor korner </p>
+</body>
+</html>

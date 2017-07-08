@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}|Orders {% endblock %}
+{% block body %}
+<h1 class="display-1 text-right"><a class="shopping-cart-header" href="{% url 'home'%}">KAMOOR KORNER</a></h1>
+<h2 class="display-3 subheader">List of confirmed orders</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Order no</th>
+      <th>Ordered On</th>
+
+    </tr>
+  </thead>
+  <tbody>
+{% for order in orders %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td><a class="btn btn-default btn-sm" href="{% url 'orders:order_detail' pk=order.id %}">{{ order.id }}</a></td>
+      <td>{{order.created_on}}</td>
+
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endblock%}

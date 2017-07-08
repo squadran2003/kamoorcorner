@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}|Confirm order{% endblock %}
+
+{% block body %}
+
+<h1 class="display-1 text-right"><a class="shopping-cart-header" href="{% url 'home'%}">KAMOOR KORNER</a></h1>
+<h4>Confirm your order</h4>
+<form action='' method="POST">
+    {% csrf_token %}
+    {{form|bootstrap}}
+    <input type="submit" value="Confirm Order" class="btn btn-default btn-lrg">
+</form>
+{% endblock%}

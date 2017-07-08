@@ -1,0 +1,91 @@
+.jumbotron{
+    background-image: url('../img/IMG_1510.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:700px;
+
+}
+a, a:hover{
+    text-decoration: none;
+    color:black;
+}
+
+.display-3{
+    color: #8f743f;
+    font-size: 3.5em;
+    font-weight: 400;
+}
+.display-1{
+    font-size: 3.5em;
+    font-weight: 400
+}
+.header-text{
+    width:30%;
+    padding:10px;
+    margin-bottom: 10px;
+    background: brown;
+    color:beige;
+    opacity: 0.6;
+    border-style: outset;
+}
+.subheader{
+    margin: 50px 0px 50px 0px;
+}
+
+.products{
+    max-width:45%;
+    margin-right: 5%;
+    float:left;
+}
+.cards h2{
+    color:#A0522D;
+    text-decoration: underline;
+    font-size: 2em;
+}
+.card-block p{
+    display: inline-block;
+}
+
+.shopping-cart-header {
+    color:black;
+}
+
+
+.shopping-cart-header:hover {
+    text-decoration: none;
+}
+.icon{
+    font-size: 1.5em;
+    padding-right: 2px;
+}
+.facebook{
+    width:35px;
+}
+
+.order{
+    width:50%;
+    margin: 10% auto;
+
+}
+.footer{
+    margin-top: 50px;
+}
+@media (max-width: 900px){
+   .header-text{
+       width:100%;
+   }
+   .products{
+       width:100%;
+       float:left;
+   }
+   .subheader{
+       text-align: left;
+       margin-bottom: 5px;
+   }
+   .order{
+       width: 100%;
+       margin: 10% 0;
+   }
+
+
+}
