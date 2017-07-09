@@ -78,7 +78,8 @@ def confirm_order(request,user_id,order_no,confirmed):
                     instance.user = user
                     instance.address = form.cleaned_data['address']
                     instance.phone_number = form.cleaned_data['phone_number']
-                    instance.order.confirmed = confirmed
+                    order.confirmed = confirmed
+                    order.save()
                     instance.save()
                     #confirm the order
                     subject = 'New order placed at kamoor korner'
