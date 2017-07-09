@@ -49,7 +49,7 @@ def new_order(request):
         receiver = [request.user.email,]
         context = {'cart':cart,'total_cost':shopping_cost,
                     'username':request.user.username,
-        'link':'http://www.kamoorkorner/com/orders/order/confirm_order/{}/{}/True/'.format(request.user.id,order_instance.pk)}
+        'link':'http://www.kamoorcorner.herokuapp.com/orders/order/confirm_order/{}/{}/True/'.format(request.user.id,order_instance.pk)}
         send_new_order_mail (subject,sender,receiver,context)
         #remove products from the cart once the order has been placed
 
@@ -116,13 +116,12 @@ def add_to_cart(request,product_id):
 def remove_from_cart(request, product_id):
     product = Product.objects.get(id=product_id)
     cart = Cart(request)
-    total_cost = 0
     count = 0
     for item in cart:
         count+=1
-        total_cost+=item.total_price
     try:
         cart.remove(product)
+        total_cost = shopping_cart_total(cart)
         messages.success(request,'Your item has been removed from the cart!')
     except:
         messages.error(request,'Error removing item from cart!')
