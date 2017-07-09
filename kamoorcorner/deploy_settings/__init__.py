@@ -11,7 +11,7 @@ ALLOWED_HOSTS=[
 ]
 
 SECRET_KEY = get_env_variable("SECRET_KEY")
-EMAIL_HOST_USER = get_env_variable("squadran2003")
+EMAIL_HOST_USER = get_env_variable("EMAIL_HOST_USER")
 
 
 db_from_env = dj_database_url.config()
