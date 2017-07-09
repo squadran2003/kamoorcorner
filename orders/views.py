@@ -65,12 +65,11 @@ def confirm_order(request,user_id,order_no,confirmed):
     form = ConfirmOrderForm(request.POST or None)
     # confirm the order
     order = get_object_or_404(Order,pk=order_no)
-    #check to see if the order is confirmed
-    order.confirmed = confirmed
     order.save()
     user = User.objects.get(pk=user_id)
     if request.method=='POST':
         form = ConfirmOrderForm(request.POST or None)
+        #check to see if the order is confirmed
         if not order.confirmed:
             if form.is_valid():
                 try:
@@ -80,6 +79,8 @@ def confirm_order(request,user_id,order_no,confirmed):
                     instance.address = form.cleaned_data['address']
                     instance.phone_number = form.cleaned_data['phone_number']
                     instance.save()
+                    #confirm the order
+                    order.confirmed = confirmed
                     subject = 'New order placed at kamoor korner'
                     sender = "noreply@kamoorkorner.com"
                     receiver = ['kamoorkorner@gmail.com',]
