@@ -78,9 +78,9 @@ def confirm_order(request,user_id,order_no,confirmed):
                     instance.user = user
                     instance.address = form.cleaned_data['address']
                     instance.phone_number = form.cleaned_data['phone_number']
+                    instance.order.confirmed = confirmed
                     instance.save()
                     #confirm the order
-                    order.confirmed = confirmed
                     subject = 'New order placed at kamoor korner'
                     sender = "noreply@kamoorkorner.com"
                     receiver = ['kamoorkorner@gmail.com',]
