@@ -49,7 +49,7 @@ def new_order(request):
         receiver = [request.user.email,]
         context = {'cart':cart,'total_cost':shopping_cost,
                     'username':request.user.username,
-        'link':'http://www.kamoorcorner.herokuapp.com/orders/order/confirm_order/{}/{}/True/'.format(request.user.id,order_instance.pk)}
+        'link':'https://kamoorcorner.herokuapp.com/orders/order/confirm_order/{}/{}/True/'.format(request.user.id,order_instance.pk)}
         send_new_order_mail (subject,sender,receiver,context)
         #remove products from the cart once the order has been placed
 
