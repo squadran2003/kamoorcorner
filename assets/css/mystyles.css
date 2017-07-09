@@ -87,7 +87,7 @@ a, a:hover{
        margin: 10% 0;
    }
    .jumbotron{
-
+       background-image: none;
        height:100%;
 
    }
