@@ -57,7 +57,8 @@ INSTALLED_APPS = [
     'kkaccounts',
     'orders',
     'products',
-    
+
+
 
 
 
@@ -150,10 +151,12 @@ USE_TZ = True
 
 
 
-EMAIL_HOST = "smtp.sendgrid.net"
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'squadran2003'
+EMAIL_HOST_PASSWORD = 'innocent23'
 EMAIL_PORT = 587
-EMAIL_USERNAME = "andy-sendgrid"
-EMAIL_PASSWORD = "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"
+EMAIL_USE_TLS = True
 
 
 
