@@ -158,6 +158,8 @@ EMAIL_HOST_PASSWORD = 'innocent23'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+DEFAULT_FROM_EMAIL = 'noreply@kamoorkorner.com'
+
 
 
 STATIC_URL = '/assets/'
