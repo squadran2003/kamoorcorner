@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'kkaccounts',
     'orders',
     'products',
+    
 
 
 
@@ -149,21 +150,10 @@ USE_TZ = True
 
 
 
-
-#EMAIL_HOST = 'smtp.mailgun.org'
-#EMAIL_PORT = 587
-#EMAIL_HOST_USER = 'postmaster@mg.kamoorkorner.com'
-#EMAIL_HOST_PASSWORD = 'f68a49423ff030f3449a267f9bfc43ea'
-#EMAIL_USE_TLS = True
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "squadran2003"
-DEFAULT_FROM_EMAIL = 'squadran2003@gmail.com'
-EMAIL_HOST_PASSWORD = 'innocent24'
+EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
+EMAIL_USERNAME = "andy-sendgrid"
+EMAIL_PASSWORD = "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"
 
 
 
