@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load static from staticfiles%}
 {% load bootstrap %}
 {% block title %}Shopping cart {% endblock %}
 {% block body %}
@@ -30,11 +31,17 @@
             <td></td>
             <td></td>
             <td>Total &#8377;{{total_cost}}</td>
-            <form action="{% url 'orders:new_order'%}">
+            <form action="{% url 'orders:new_order'%}" id="place-order-form">
                 {% csrf_token %}
-                <td><input type='submit' value='Order' class="btn btn-success" href="{% url 'orders:new_order' %}"></td>
+                <td><input type='button' id="place-order-button" value='Order' class="btn btn-info btn-lg"></td>
             </form>
         </tr>
  </tbody>
 </table>
+
+
+<div id="please_wait" class="text-center">
+    <p>Please wait</p>
+    <img src="{% static 'img/ajax-loader.gif' %}">
+</div>
 {% endblock %}

@@ -91,6 +91,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            
 
             ],
         },
@@ -145,7 +146,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+#test
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
@@ -166,12 +167,13 @@ STATIC_URL = '/assets/'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "assets"),
+    os.path.join(BASE_DIR, "media"),
 )
 
 STATICFILES_STORAGE="whitenoise.django.GzipManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'mediafiles')
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 LOGIN_URL  = 'accounts:login'
 LOGIN_REDIRECT_URL = 'home'

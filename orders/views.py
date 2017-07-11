@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import get_template
 from django.template import Context
+import time
 
 # Create your views here.
 from products.models import Product
@@ -50,7 +51,7 @@ def new_order(request):
         context = {'cart':cart,'total_cost':shopping_cost,
                     'username':request.user.username,
         'link':'https://kamoorcorner.herokuapp.com/orders/order/confirm_order/{}/{}/True/'.format(request.user.id,order_instance.pk)}
-        send_new_order_mail (subject,sender,receiver,context)
+        #send_new_order_mail (subject,sender,receiver,context)
         #remove products from the cart once the order has been placed
 
         remove_old_products_from_cart(cart,old_cart_products)

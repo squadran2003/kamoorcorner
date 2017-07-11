@@ -1,6 +1,7 @@
 $(document).ready(function(){
  $(".order-form").hide();
  $(".form-errors").hide();
+ $("#please_wait").hide();
 
  $("input").click(function(e){
 
@@ -21,7 +22,7 @@ $(document).ready(function(){
 
  });
 
- 
+
 
  $("input[type='submit']").click(function(evt){
      $form = $(this).closest('form');
@@ -39,6 +40,13 @@ $(document).ready(function(){
      });
 
  });
+ $("#place-order-button").click(function(){
+      $("#place-order-form").submit();
+      $("#please_wait").show();
+
+ });
+
+
 
 
 

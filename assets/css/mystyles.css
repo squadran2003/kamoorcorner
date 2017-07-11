@@ -23,9 +23,9 @@ a, a:hover{
     width:30%;
     padding:10px;
     margin-bottom: 10px;
-    background: brown;
-    color:beige;
-    opacity: 0.6;
+    background: white;
+    color:teal;
+    opacity: 0.9;
     border-style: outset;
 }
 .subheader{
@@ -67,9 +67,23 @@ a, a:hover{
     margin: 10% auto;
 
 }
+
+
 .footer{
     margin-top: 50px;
 }
+
+.btn-info,
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active {
+  color: #fff;
+  background-color: teal;
+  border-color: teal;
+}
+
+
 @media (max-width: 900px){
    .header-text{
        width:100%;
@@ -88,6 +102,8 @@ a, a:hover{
    }
    .jumbotron{
        background-image: none;
+       background: white;
+       border:none;
        height:100%;
 
    }
