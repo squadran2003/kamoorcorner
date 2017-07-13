@@ -1,112 +1,57 @@
-.jumbotron{
-    background-image: url('../img/IMG_1510.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:700px;
-
-}
 a, a:hover{
     text-decoration: none;
     color:black;
 }
-
-.display-3{
-    color: #8f743f;
-    font-size: 3.5em;
-    font-weight: 400;
-}
-.display-1{
-    font-size: 3.5em;
-    font-weight: 400
-}
-.header-text{
-    width:30%;
-    padding:10px;
-    margin-bottom: 10px;
-    background: white;
-    color:teal;
-    opacity: 0.9;
-    border-style: outset;
-}
-.subheader{
-    margin: 50px 0px 50px 0px;
-}
-
-.products{
-    max-width:45%;
-    margin-right: 5%;
-    float:left;
-}
-.cards h2{
-    color:#A0522D;
-    text-decoration: underline;
-    font-size: 2em;
-}
-.card-block p{
-    display: inline-block;
-}
-
-.shopping-cart-header {
-    color:black;
-}
-
-
-.shopping-cart-header:hover {
-    text-decoration: none;
-}
-.icon{
-    font-size: 1.5em;
-    padding-right: 2px;
+.jumbotron{
+    background: none;
 }
 .facebook{
-    width:35px;
+    height:40px;
 }
-
-.order{
-    width:50%;
-    margin: 10% auto;
-
+.facebook a{
+    display: inline-block;
 }
-
-
-.footer{
-    margin-top: 50px;
-}
-
-.btn-info,
-.btn-info:hover,
-.btn-info:focus,
-.btn-info:active,
-.btn-info.active {
-  color: #fff;
-  background-color: teal;
-  border-color: teal;
+.glyphicon{
+    font-size: 2em;
 }
 
 
-@media (max-width: 900px){
-   .header-text{
-       width:100%;
-   }
-   .products{
-       width:100%;
-       float:left;
-   }
-   .subheader{
-       text-align: left;
-       margin-bottom: 5px;
-   }
-   .order{
-       width: 100%;
-       margin: 10% 0;
-   }
-   .jumbotron{
-       background-image: none;
-       background: white;
-       border:none;
-       height:100%;
 
-   }
+@media (min-width:780px){
+    .jumbotron{
+        background-image: url('../img/image_of_guwahati.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height:700px;
+
+
+
+    }
+    .jumbotron h1{
+
+        border-bottom:1px;
+        color:white;
+        border-bottom: 1px solid white;
+    }
+    body{
+        color:black;
+    }
+    .lead{
+        color:white;
+    }
+    .header{
+        text-align: center;
+        font-size: 3.5em;
+    }
+    .facebook{
+        height:40px;
+    }
+    .facebook a{
+        display: inline-block;
+    }
+    .glyphicon{
+        font-size: 2em;
+    }
 
 
 }

@@ -4,7 +4,6 @@
 {% block title %} |Best home made sausages in guwahati {% endblock %}
 {% block section1%}
 <div class="container-fluid">
-    <h1 class="display-1 text-right">KAMOOR KORNER</h1>
     {% if request.user.is_authenticated %}
         <nav class="navbar navbar navbar-default">
               <div class="container-fluid">
@@ -31,38 +30,34 @@
         </nav>
         <div id="shopping-basket">
                 <p><span class="glyphicon glyphicon-shopping-cart icon"></span>
-                    <a class="btn btn-lg btn-info" href="{% url 'orders:view_cart' %}">
+                    <a class="btn btn-lg btn-default" href="{% url 'orders:view_cart' %}">
                         Your Cart</a></p>
         </div>
     {% endif %}
-    <div class="jumbotron  text-left">
-        <div class="header-text">
-            <p class="lead">Welcome to Kamoor Corner, a family-run sausage business.
-            All our sausages are made at home from scratch. We believe and promote
-            preservative-free products that are made to order.
-            We offer 3 types of sausages - chicken, pork and breakfast sausages.</p>
-        </div>
-        <div class="btn-group" role"group">
-            <a href="#map" class="btn btn-info btn-lg">Find us on a map</a>
-            <a href="#contact-us" class="btn btn-info btn-lg">Contact us</a>
-        </div>
-
+    <div class="jumbotron  text-center">
+        <h1>KAMOOR KORNER</h1>
+        <p class="lead">Best home made sausages in guwahati</p>
+        <a href="#map" class="btn btn-default btn-lg">Find us on a map</a>
+        <a href="#contact-us" class="btn btn-default btn-lg">Contact us</a>
     </div>
 </div>
 
 
 {% endblock %}
 {% block body %}
-<h1 class="display-3 text-center subheader">What we offer</h1>
-<div class="row">
+    <h1 class="header">What we offer</h1>
+    <div class=text-center>
+        <img src="{% static 'img/logo.png'%}">
+    </div>
+    <div class="row">
         {% for product in products %}
         <div class={{col_class}}>
-            <div class="cards">
+            <div>
                   <h2>{{product.title}}</h2>
                   <p>{{product.description}}</p>
-                  <p class="lead">Pick them up from &#8377;{{product.Cost}} per kilo</p>
+                  <p>Pick them up from &#8377;{{product.Cost}} per kilo</p>
                   {% if request.user.is_authenticated %}
-                  <p class="place-order"><input class="btn btn-info btn-lg" type="submit" value="place order" /></p>
+                    <p class="place-order"><input class="btn btn-default btn-lg" type="submit" value="place order" /></p>
                   {% endif%}
 
              </div>
@@ -84,34 +79,34 @@
 </div>
 <div class="row">
     <div class="col-sm-6">
-        <h1 class="display-3">Delivery</h1>
+        <h1>Delivery</h1>
         </br>
         <p>All our sausages are made from fresh. Delivery time is set from the time we receive your order, We estimate, your order
             will be available within the next 24 hrs, you can pick it up or alternatively we can have it delivered to your address.</p>
         {% if not request.user.is_authenticated %}
-         <h1 class="display-3">Ordering online</h1>
+         <h1>Ordering online</h1>
          <p>First-time buyers will need to register on the website, so that we can keep track of your orders.
              You need to be logged in to place an order on the website!. Once an order is placed
              we will send you a confirmation email, you will need to confirm your order by clicking on the link in your email.</p>
-         <p><a class="btn btn-info btn-lg" href="{% url 'accounts:login' %}" >Click here to login</a></p>
+         <p><a class="btn btn-default btn-lg" href="{% url 'accounts:login' %}" >Click here to login</a></p>
          <p>Dont have an account?</p>
-         <p> <a class="btn btn-info btn-lg" href="{% url 'kkaccounts:signup' %}" >click here to create an account</a></p>
+         <p> <a class="btn btn-default btn-lg" href="{% url 'kkaccounts:signup' %}" >click here to create an account</a></p>
 
         {% endif %}
     </div>
     <div class="col-sm-6" id="contact-us">
-        <h1 class="display-3">Contact us</h1>
-        <p class="lead"> <span class="glyphicon glyphicon-envelope icon"></span>
+        <h1>Contact us</h1>
+        <p> <span class="glyphicon glyphicon-envelope icon"></span>
             <a href="mailto:kamoorkorner@gmail.com?subject=sausageorder"> order by email</a></p>
-        <p class="lead"> <span class="glyphicon glyphicon-phone-alt icon"></span>
+        <p> <span class="glyphicon glyphicon-phone-alt icon"></span>
             <a href='tel:+919980474247'>+91 9980474247</a></p>
-        <p class="lead"> <img class="facebook" src="{% static 'img/facebook.png'%}">
+        <p> <img class="img-responsive facebook" src="{% static 'img/facebook.png'%}">
             <a href='https://www.facebook.com/KamoorKorner/'target="_blank">Follow us on facebook</a></p>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <h1 class="display-3  text-center">Our location</h1>
+        <h1 class="text-center">Our location</h1>
         <div id="map" style="height:500px; margin:30px 0px 30px 0px; min-width:100%;">
         </div>
     </div>
