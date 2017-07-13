@@ -36,7 +36,7 @@
     {% endif %}
     <div class="jumbotron  text-center">
         <h1>KAMOOR KORNER</h1>
-        <p class="lead">Best home made sausages in guwahati</p>
+        <p>Best home made sausages in guwahati</p>
         <a href="#map" class="btn btn-default btn-lg">Find us on a map</a>
         <a href="#contact-us" class="btn btn-default btn-lg">Contact us</a>
     </div>
@@ -45,10 +45,13 @@
 
 {% endblock %}
 {% block body %}
-    <h1 class="header">What we offer</h1>
-    <div class=text-center>
-        <img src="{% static 'img/logo.png'%}">
+    <div class="text-center">
+        <span class="header"><img src="{% static 'img/logo.png'%}">Welcome</span>
+        <p class="lead">Kamoor Corner, a family-run sausage business. All our sausages are made at home from scratch.
+            We believe and promote preservative-free products that are made to order. We offer 3 types of sausages - chicken,
+            ork and breakfast sausages.</p>
     </div>
+    <h1 class="text-center header">What we offer</h1>
     <div class="row">
         {% for product in products %}
         <div class={{col_class}}>

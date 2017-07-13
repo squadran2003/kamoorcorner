@@ -33,7 +33,7 @@
             <td>Total &#8377;{{total_cost}}</td>
             <form action="{% url 'orders:new_order'%}" id="place-order-form">
                 {% csrf_token %}
-                <td><input type='button' id="place-order-button" value='Order' class="btn btn-info btn-lg"></td>
+                <td><input type='button' id="place-order-button" value='Order' class="btn btn-default btn-lg"></td>
             </form>
         </tr>
  </tbody>
