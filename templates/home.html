@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% load static from staticfiles%}
 {% load bootstrap %}
-{% block title %} |Best home made sausages in guwahati {% endblock %}
+{% block title %} |Best home made sausages in Guwahati {% endblock %}
 {% block section1%}
 <div class="container-fluid">
     {% if request.user.is_authenticated %}
@@ -30,7 +30,7 @@
         </nav>
         <div id="shopping-basket">
                 <p><span class="glyphicon glyphicon-shopping-cart icon"></span>
-                    <a class="btn btn-lg btn-default" href="{% url 'orders:view_cart' %}">
+                    <a class="btn btn-lg btn-primary" href="{% url 'orders:view_cart' %}">
                         Your Cart</a></p>
         </div>
     {% endif %}
@@ -60,7 +60,7 @@
                   <p>{{product.description}}</p>
                   <p>Pick them up from &#8377;{{product.Cost}} per kilo</p>
                   {% if request.user.is_authenticated %}
-                    <p class="place-order"><input class="btn btn-default btn-lg" type="submit" value="place order" /></p>
+                    <p class="place-order"><input class="btn btn-primary btn-lg" type="submit" value="place order" /></p>
                   {% endif%}
 
              </div>
@@ -72,7 +72,7 @@
                      {% csrf_token %}
                       <p>how many kilo's would you like?</p>
                      {{ form|bootstrap }}
-                     <input class="btn btn-default btn-sm" type="submit" value="add to cart" />
+                     <input class="btn btn-primary btn-sm" type="submit" value="add to cart" />
                  </form>
             </div>
 
@@ -91,9 +91,9 @@
          <p>First-time buyers will need to register on the website, so that we can keep track of your orders.
              You need to be logged in to place an order on the website!. Once an order is placed
              we will send you a confirmation email, you will need to confirm your order by clicking on the link in your email.</p>
-         <p><a class="btn btn-default btn-lg" href="{% url 'accounts:login' %}" >Click here to login</a></p>
+         <p><a class="btn btn-primary btn-lg" href="{% url 'accounts:login' %}" >Click here to login</a></p>
          <p>Dont have an account?</p>
-         <p> <a class="btn btn-default btn-lg" href="{% url 'kkaccounts:signup' %}" >click here to create an account</a></p>
+         <p> <a class="btn btn-primary btn-lg" href="{% url 'kkaccounts:signup' %}" >click here to create an account</a></p>
 
         {% endif %}
     </div>
