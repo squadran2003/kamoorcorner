@@ -35,8 +35,8 @@
         </div>
     {% endif %}
     <div class="jumbotron  text-center">
-        <h1>KAMOOR KORNER</h1>
-        <p>Best home made sausages in guwahati</p>
+        <h1><a href="{% url 'home' %}">KAMOOR KORNER</a></h1>
+        <p>Best home made sausages in Guwahati</p>
         <a href="#map" class="btn btn-default btn-lg">Find us on a map</a>
         <a href="#contact-us" class="btn btn-default btn-lg">Contact us</a>
     </div>
@@ -103,7 +103,7 @@
             <a href="mailto:kamoorkorner@gmail.com?subject=sausageorder"> order by email</a></p>
         <p> <span class="glyphicon glyphicon-phone-alt icon"></span>
             <a href='tel:+919980474247'>+91 9980474247</a></p>
-        <p> <img class="img-responsive facebook" src="{% static 'img/facebook.png'%}">
+        <p><img class="img-responsive facebook" src="{% static 'img/facebook.png'%}">
             <a href='https://www.facebook.com/KamoorKorner/'target="_blank">Follow us on facebook</a></p>
     </div>
 </div>

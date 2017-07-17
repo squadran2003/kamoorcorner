@@ -23,6 +23,26 @@ a, a:hover{
     font-size: 3.5em;
 }
 
+#contact-us a,#contact-us a:hover{
+    color:black;
+
+}
+#contact-us img{
+    display: inline-block;
+}
+
+.btn-primary,
+.btn-primary:active{
+    background-color: white;
+    color:black;
+    border: 1px solid lightgrey;
+}
+.btn-primary:hover{
+    background-color: lightgrey;
+    color:black;
+    border: 1px solid lightgrey;
+
+}
 
 
 @media (min-width:780px){
@@ -42,10 +62,13 @@ a, a:hover{
 
 
     }
+    .jumbotron h1,a,a:hover{
+        color:white;
+
+    }
     .jumbotron h1{
 
         border-bottom:1px;
-        color:white;
         border-bottom: 1px solid white;
     }
     .jumbotron p{
@@ -78,12 +101,33 @@ a, a:hover{
         font-size: 2em;
     }
     .footer{
-        background-color: black;
-        color:white;
+        background-color: #f5f5f5;
+        color:black;
         height:80px;
     }
     .footer p{
         padding-top:30px;
+    }
+
+    .btn-primary,
+    .btn-primary:active{
+        background-color: black;
+        color:white;
+    }
+    .btn-primary:hover{
+        background-color: #191970;
+        color:white;
+
+    }
+    #contact-us a,#contact-us a:hover{
+        color:black;
+
+    }
+    #contact-us img{
+        display: inline-block;
+    }
+    .shopping-cart-header,.shopping-cart-header:hover{
+        color:black;
     }
 
 

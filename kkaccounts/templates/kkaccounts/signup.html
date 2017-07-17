@@ -1,12 +1,13 @@
 {% extends 'layout.html' %}
 {% load bootstrap %}
-{% block title %}|Create an account{% endblock %}
+{% block title %}|Create an account {% endblock %}
 {% block body %}
 <h1 class="display-1 text-right"><a class="shopping-cart-header" href="{% url 'home'%}">KAMOOR KORNER</a></h1>
-<h4>Create an account below</h4>
+<h2>Create an account below</h2>
 <form action='' method="POST">
     {% csrf_token %}
     {{form|bootstrap}}
-    <input type="submit" value="SignUp" class="btn btn-default btn-lg">
+    <input type="submit" value="SignUp" class="btn btn-primary btn-lrg">
 </form>
+</br>
 {% endblock%}
