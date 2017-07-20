@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}|{{product.name}}{% endblock %}
+{% block body %}
+<h1 class="display-1 text-right"><a class="shopping-cart-header" href="{% url 'home'%}">KAMOOR KORNER</a></h1>
+<h2>{{product.name}}</h2>
+<form action='' method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form|bootstrap}}
+    <input type="submit" value="submit" class="btn btn-primary btn-lrg">
+</form>
+</br>
+
+{% endblock%}

@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}|Products {% endblock %}
+{% block body %}
+<h1 class="display-1 text-right"><a class="shopping-cart-header" href="{% url 'home'%}">KAMOOR KORNER</a></h1>
+<h2 class="display-3 subheader">List of Products</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Product</th>
+      <th>Created on </th>
+
+    </tr>
+  </thead>
+  <tbody>
+{% for product in products %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td><a class="btn btn-primary btn-sm" href="{% url 'products:product_detail' pk=product.id %}">{{ product.title}}</a></td>
+      <td>{{product.created_on}}</td>
+
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+{% endblock%}
