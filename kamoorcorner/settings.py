@@ -175,6 +175,10 @@ STATICFILES_STORAGE="whitenoise.django.GzipManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIAFILES_DIRS = (
+
+    os.path.join(BASE_DIR, "media"),
+)
 
 LOGIN_URL  = 'accounts:login'
 LOGIN_REDIRECT_URL = 'home'
