@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'cart',
     'phonenumber_field',
     'bootstrapform',
@@ -160,6 +161,13 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 DEFAULT_FROM_EMAIL = 'noreply@kamoorkorner.com'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_S3_SECURE_URLS = False
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_ACCESS_KEY_ID = 'AKIAJSPJYV3ZRSGJZN4Q'
+AWS_S3_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'kamoorkornermedia'
 
 
 

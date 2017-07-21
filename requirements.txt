@@ -29,3 +29,5 @@ whitenoise==3.3.0
 xmltodict==0.11.0
 dj-database-url
 psycopg2
+boto==2.48.0
+django-storages==1.6.3
