@@ -46,47 +46,41 @@
 
 {% endblock %}
 {% block body %}
-    <div class="text-center">
-        <span class="header"><img src="{% static 'img/logo.png'%}">Welcome</span>
-        <p class="lead">Kamoor Corner, a family-run sausage business. All our sausages are made at home from scratch.
-            We believe and promote preservative-free products that are made to order. We offer 3 types of sausages - chicken,
-            pork and breakfast sausages.</p>
-    </div>
-    <h1 class="text-center header">What we offer</h1>
-    <div class="row">
-        {% for product in products %}
-        <div class={{col_class}}>
-            <div class="row">
-                <div class="col-sm-6">
-                    {% if product.image %}
-                        <img class="img-thumbnail" src={{product.image.url}}>
-                    {% endif %}
-                </div>
-                <div class="col-sm-6">
-                    <div>
-                          <h2>{{product.title}}</h2>
-                          <p>{{product.description}}</p>
-                          <p>Pick them up from &#8377;{{product.Cost}} per kilo</p>
-                          {% if request.user.is_authenticated %}
-                            <p class="place-order"><input class="btn btn-primary btn-lg" type="submit" value="place order" /></p>
-                          {% endif%}
+<div class="text-center">
+    <span class="header"><img src="{% static 'img/logo.png'%}">Welcome</span>
+    <p class="lead">Kamoor Corner, a family-run sausage business. All our sausages are made at home from scratch.
+        We believe and promote preservative-free products that are made to order. We offer 3 types of sausages - chicken,
+        pork and breakfast sausages.</p>
+</div>
+<h1 class="text-center header">What we offer</h1>
+<div class="row">
+    {% for product in products %}
+    <div class={{col_class}}>
+        {% if product.image %}
+            <img class="img-thumbnail" src={{product.image.url}}>
+        {% endif %}
+        <div>
+              <h2>{{product.title}}</h2>
+              <p>{{product.description}}</p>
+              <p>Pick them up from &#8377;{{product.Cost}} per kilo</p>
+              {% if request.user.is_authenticated %}
+                <p class="place-order"><input class="btn btn-primary btn-lg" type="submit" value="place order" /></p>
+              {% endif%}
 
-                     </div>
-                     <div class='form-errors'>
-                         <p>errors</p>
-                     </div>
-                     <div class='order-form' id="{{product.id}}">
-                         <form action="{% url 'orders:add_to_cart' product_id=product.id %}" method="post">
-                             {% csrf_token %}
-                              <p>how many kilo's would you like?</p>
-                             {{ form|bootstrap }}
-                             <input class="btn btn-primary btn-sm" type="submit" value="add to cart" />
-                         </form>
-                    </div>
-                </div>
-            </div>
+         </div>
+         <div class='form-errors'>
+             <p>errors</p>
+         </div>
+         <div class='order-form' id="{{product.id}}">
+             <form action="{% url 'orders:add_to_cart' product_id=product.id %}" method="post">
+                 {% csrf_token %}
+                  <p>how many kilo's would you like?</p>
+                 {{ form|bootstrap }}
+                 <input class="btn btn-primary btn-sm" type="submit" value="add to cart" />
+             </form>
         </div>
-        {% endfor %}
+    </div>
+{% endfor %}
 
 </div>
 <div class="row">
