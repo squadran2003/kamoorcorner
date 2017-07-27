@@ -35,6 +35,9 @@ class ConfirmOrderForm(ModelForm):
     class Meta:
         model = ConfirmedOrder
         fields = ['address','phone_number']
+        help_texts = {
+            'phone_number': ('Enter phone number including country code!'),
+        }
 
     def clean(self):
         data = self.cleaned_data

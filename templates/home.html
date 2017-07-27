@@ -95,6 +95,21 @@
         </br>
         <p>All our sausages are made from fresh. Delivery time is set from the time we receive your order, We estimate, your order
             will be available within the next 24 hrs, you can pick it up or alternatively we can have it delivered to your address.</p>
+    </div>
+    <div class="col-sm-6" id="contact-us">
+        <h1>Contact us</h1>
+        <p><span class="glyphicon glyphicon-envelope icon"></span>
+            <a href="mailto:kamoorkorner@gmail.com?subject=sausageorder"> order by email</a></p>
+        <p><span class="glyphicon glyphicon-phone-alt icon"></span>
+            <a href='tel:+919980474247'> +91 9980474247</a></p>
+        <p><span class="glyphicon glyphicon-home"></span>
+            104B, Ashram Road, South Sarania, Ulubari, Guwahati-07</p>
+        <p><img class="img-responsive facebook" src="{% static 'img/facebook.png'%}">
+            <a href='https://www.facebook.com/KamoorKorner/'target="_blank"> Follow us on facebook</a></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6">
         {% if not request.user.is_authenticated %}
          <h1>Ordering online</h1>
          <p>First-time buyers will need to register on the website, so that we can keep track of your orders.
@@ -106,14 +121,10 @@
 
         {% endif %}
     </div>
-    <div class="col-sm-6" id="contact-us">
-        <h1>Contact us</h1>
-        <p> <span class="glyphicon glyphicon-envelope icon"></span>
-            <a href="mailto:kamoorkorner@gmail.com?subject=sausageorder"> order by email</a></p>
-        <p> <span class="glyphicon glyphicon-phone-alt icon"></span>
-            <a href='tel:+919980474247'>+91 9980474247</a></p>
-        <p><img class="img-responsive facebook" src="{% static 'img/facebook.png'%}">
-            <a href='https://www.facebook.com/KamoorKorner/'target="_blank">Follow us on facebook</a></p>
+    <div class="col-sm-6">
+        <h1> Opening times </h1>
+        <p> We are open from 8 am to 8 pm Monday to Friday.</p>
+        <p> Give us a call on the number above.</p>
     </div>
 </div>
 <div class="row">
