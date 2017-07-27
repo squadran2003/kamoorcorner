@@ -108,25 +108,25 @@
             <a href='https://www.facebook.com/KamoorKorner/'target="_blank"> Follow us on facebook</a></p>
     </div>
 </div>
-<div class="row">
-    <div class="col-sm-6">
-        {% if not request.user.is_authenticated %}
-         <h1>Ordering online</h1>
-         <p>First-time buyers will need to register on the website, so that we can keep track of your orders.
-             You need to be logged in to place an order on the website!. Once an order is placed
-             we will send you a confirmation email, you will need to confirm your order by clicking on the link in your email.</p>
-         <p><a class="btn btn-primary btn-lg" href="{% url 'accounts:login' %}" >Click here to login</a></p>
-         <p>Dont have an account?</p>
-         <p> <a class="btn btn-primary btn-lg" href="{% url 'kkaccounts:signup' %}" >click here to create an account</a></p>
+{% if not request.user.is_authenticated %}
+    <div class="row">
+        <div class="col-sm-6">
 
-        {% endif %}
+             <h1>Ordering online</h1>
+             <p>First-time buyers will need to register on the website, so that we can keep track of your orders.
+                 You need to be logged in to place an order on the website!. Once an order is placed
+                 we will send you a confirmation email, you will need to confirm your order by clicking on the link in your email.</p>
+             <p><a class="btn btn-primary btn-lg" href="{% url 'accounts:login' %}" >Click here to login</a></p>
+             <p>Dont have an account?</p>
+             <p> <a class="btn btn-primary btn-lg" href="{% url 'kkaccounts:signup' %}" >click here to create an account</a></p>
+        </div>
+        <div class="col-sm-6">
+            <h1> Opening times </h1>
+            <p> We are open from 8 am to 8 pm Monday to Friday.</p>
+            <p> Give us a call on the number above.</p>
+        </div>
     </div>
-    <div class="col-sm-6">
-        <h1> Opening times </h1>
-        <p> We are open from 8 am to 8 pm Monday to Friday.</p>
-        <p> Give us a call on the number above.</p>
-    </div>
-</div>
+{% endif %}
 <div class="row">
     <div class="col-sm-12">
         <h1 class="text-center header">Our location</h1>
