@@ -11,10 +11,11 @@ ALLOWED_HOSTS=[
 ]
 
 SECRET_KEY = get_env_variable("SECRET_KEY")
+EMAIL_HOST = get_env_variable('smtp.sendgrid.net')
 EMAIL_HOST_USER = get_env_variable("EMAIL_HOST_USER")
 AWS_S3_ACCESS_KEY_ID = get_env_variable("AWS_ID")
 AWS_S3_SECRET_ACCESS_KEY = get_env_variable("AWS_PASS")
-EMAIL_HOST = get_env_variable('smtp.sendgrid.net')
+
 
 
 
