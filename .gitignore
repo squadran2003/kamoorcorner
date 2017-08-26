@@ -103,3 +103,5 @@ ENV/
 /bin
 /lib
 db.sqlite3
+Procfile
+/deploy_settings
