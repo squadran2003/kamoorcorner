@@ -104,4 +104,6 @@ ENV/
 /lib
 db.sqlite3
 Procfile
+
 /deploy_settings
+*.__init__.py
