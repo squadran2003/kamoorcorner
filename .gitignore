@@ -105,5 +105,5 @@ ENV/
 db.sqlite3
 Procfile
 
-/deploy_settings
-*.__init__.py
+/kamoorcorner/deploy_settings/__init__.py
+/deploy_settings/__init__.py
